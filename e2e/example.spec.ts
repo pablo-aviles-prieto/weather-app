@@ -1,8 +1,8 @@
 import { expect, test } from '@playwright/test';
 
 test('has correct title', async ({ page }) => {
-	await page.goto('/'); // ← Now uses baseURL, so just '/'
-	await expect(page).toHaveTitle('react-template');
+	await page.goto('/');
+	await expect(page).toHaveTitle('Weather App');
 });
 
 test('renders hello world', async ({ page }) => {
