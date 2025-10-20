@@ -5,7 +5,7 @@ test('has correct title', async ({ page }) => {
 	await expect(page).toHaveTitle('Weather App');
 });
 
-test('renders hello world', async ({ page }) => {
+test('renders Weather App', async ({ page }) => {
 	await page.goto('/');
-	await expect(page.getByText('Hello world')).toBeVisible();
+	await expect(page.getByText('Weather App')).toBeVisible();
 });
