@@ -1,3 +1,9 @@
 {
-  "title": "Weather App"
+  "title": "Weather App",
+  "select-city": "Select City",
+  "cities": {
+    "london": "London",
+    "toronto": "Toronto",
+    "singapore": "Singapore"
+  }
 }
