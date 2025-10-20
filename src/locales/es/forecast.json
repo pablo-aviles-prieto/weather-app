@@ -1,0 +1,28 @@
+{
+  "select-city": "Selecciona una ciudad",
+  "error": {
+    "generic": "Error al recuperar los datos meteorológicos"
+  },
+  "weather": {
+    "feels-like": "Sensación",
+    "max": "Máx",
+    "min": "Mín",
+    "details": {
+      "humidity": "Humedad",
+      "wind": "Viento",
+      "pressure": "Presión",
+      "uv-index": "Índice UV",
+      "visibility": "Visibilidad",
+      "precipitation": "Precipitación"
+    },
+    "hourly-forecast": "Pronóstico horario",
+    "next-days-forecast": {
+      "title": "Predicción de {{days-number}} días",
+      "today": "Hoy"
+    },
+    "daylight": {
+      "sunrise": "Amanecer",
+      "sunset": "Atardecer"
+    }
+  }
+}

@@ -10,16 +10,16 @@ export function CitySelector() {
 
 	return (
 		<Select onValueChange={setSelectedCity} value={selectedCity}>
-			<SelectTrigger className='h-12 w-[280px] text-base'>
+			<SelectTrigger className='h-12 w-[280px]'>
 				<div className='flex items-center gap-2'>
 					<MapPin className='size-5 text-muted-foreground' />
-					<SelectValue placeholder={t('select-city')} />
+					<SelectValue placeholder={t('city-dropdown.select-city')} />
 				</div>
 			</SelectTrigger>
 			<SelectContent>
-				{CITIES.map((city) => (
-					<SelectItem className='text-base' key={city} value={city}>
-						{t(`cities.${city}`)}
+				{CITIES.map((cityName) => (
+					<SelectItem key={cityName} value={cityName}>
+						{t(`city.${cityName}`)}
 					</SelectItem>
 				))}
 			</SelectContent>

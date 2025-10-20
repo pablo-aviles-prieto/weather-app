@@ -1,0 +1,16 @@
+{
+  "title": "Weather App",
+  "city-dropdown": {
+    "select-city": "Select City"
+  },
+  "city": {
+    "london": "London",
+    "toronto": "Toronto",
+    "singapore": "Singapore"
+  },
+  "country": {
+    "united-kingdom": "United Kingdom",
+    "canada": "Canada",
+    "singapore": "Singapore"
+  }
+}

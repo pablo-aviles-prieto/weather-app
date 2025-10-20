@@ -1,0 +1,28 @@
+{
+  "select-city": "Select a city",
+  "error": {
+    "generic": "Error retrieving weather data"
+  },
+  "weather": {
+    "feels-like": "Feels like",
+    "max": "Max",
+    "min": "Min",
+    "details": {
+      "humidity": "Humidity",
+      "wind": "Wind",
+      "pressure": "Pressure",
+      "uv-index": "UV Index",
+      "visibility": "Visibility",
+      "precipitation": "Precipitation"
+    },
+    "hourly-forecast": "Hourly Forecast",
+    "next-days-forecast": {
+      "title": "{{days-number}}-Day Forecast",
+      "today": "Today"
+    },
+    "daylight": {
+      "sunrise": "Sunrise",
+      "sunset": "Sunset"
+    }
+  }
+}

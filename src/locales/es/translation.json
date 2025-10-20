@@ -1,9 +1,0 @@
-{
-  "title": "Clima App",
-  "select-city": "Seleccionar Ciudad",
-  "cities": {
-    "london": "Londres",
-    "toronto": "Toronto",
-    "singapore": "Singapur"
-  }
-}
