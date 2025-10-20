@@ -6,15 +6,11 @@ import weatherRepository from '@/services/weaher-repository';
 export const ForecastInformation = () => {
 	const { selectedCity } = useCity();
 	const currentLanguage = useLanguage();
-	const { data } = useQuery(weatherRepository.getWeatherDetails(selectedCity, currentLanguage));
+	const { data: _data } = useQuery(weatherRepository.getWeatherDetails(selectedCity, currentLanguage));
 
 	if (!selectedCity) {
 		return null;
 	}
 
-	return (
-		<div>
-			<pre>{JSON.stringify(data, null, 2)}</pre>
-		</div>
-	);
+	return <div>Test</div>;
 };
