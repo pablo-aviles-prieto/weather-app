@@ -16,10 +16,28 @@ export const HourlyForecast = ({ today, data }: HourlyForecastProps) => {
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <necessary>
 	useEffect(() => {
-		if (nowRef.current) {
-			// Scroll the current hour into the center of the container
-			nowRef.current.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+		// Cant use a simple scrollIntoView bc it would scroll the entire page vertically
+		if (!nowRef.current) {
+			return;
 		}
+		const scrollContainer = nowRef.current.parentElement;
+		if (!scrollContainer) {
+			return;
+		}
+
+		const containerRect = scrollContainer.getBoundingClientRect();
+		const currentHourRect = nowRef.current.getBoundingClientRect();
+
+		// Calculate position to center the current hour in the container
+		const currentHourRelativeLeft = currentHourRect.left - containerRect.left;
+		const containerCenter = containerRect.width / 2;
+		const currentHourCenter = currentHourRect.width / 2;
+		const scrollLeft = scrollContainer.scrollLeft + currentHourRelativeLeft - containerCenter + currentHourCenter;
+
+		scrollContainer.scrollTo({
+			left: scrollLeft,
+			behavior: 'smooth',
+		});
 	}, [today]);
 
 	return (
