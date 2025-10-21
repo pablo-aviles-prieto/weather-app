@@ -1,17 +1,13 @@
 import { Header } from '@/components/layout/header';
 import { CitySelector } from '@/features/city-selector/components/selector';
-import { ForecastInformation } from '@/features/forecast/components/forecast-information';
+import { ForecastContainer } from '@/features/forecast/components/forecast-container';
 
-export const App = () => {
-	// const { selectedCity } = useCity();
-
-	return (
-		<section className='min-h-screen'>
-			<Header />
-			<div className='flex justify-center'>
-				<CitySelector />
-			</div>
-			<ForecastInformation />
-		</section>
-	);
-};
+export const App = () => (
+	<section className='mx-auto min-h-screen max-w-5xl space-y-10 px-2 pb-10 lg:space-y-12 lg:px-4'>
+		<Header />
+		<div className='flex justify-center'>
+			<CitySelector />
+		</div>
+		<ForecastContainer />
+	</section>
+);

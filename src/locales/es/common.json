@@ -1,0 +1,16 @@
+{
+  "title": "Clima App",
+  "city-dropdown": {
+    "select-city": "Seleccionar Ciudad"
+  },
+  "city": {
+    "london": "Londres",
+    "toronto": "Toronto",
+    "singapore": "Singapur"
+  },
+  "country": {
+    "united-kingdom": "Reino Unido",
+    "canada": "Canadá",
+    "singapore": "Singapur"
+  }
+}

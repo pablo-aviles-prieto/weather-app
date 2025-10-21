@@ -39,6 +39,12 @@
       },
       "complexity": {
         "useSimplifiedLogicExpression": "off"
+      },
+      "performance": {
+        "noImgElement": "off"
+      },
+      "nursery": {
+        "useImageSize": "off"
       }
     }
   },
