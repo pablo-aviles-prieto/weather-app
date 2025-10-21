@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { SanitizeName } from '@/features/forecast/utils/sanitize-name';
+import { sanitizeName } from '@/features/forecast/utils/sanitize-name';
 import { useLanguage } from '@/hooks/use-language';
 import type { Forecastday, WeatherResponse } from '@/types/weather';
 
@@ -17,8 +17,8 @@ export const CurrentWeather = ({ data, today }: CurrentWeatherProps) => {
 			<div className='relative z-10 space-y-8'>
 				<div className='flex items-start justify-between'>
 					<div className='space-y-2'>
-						<h2 className='font-bold text-4xl tracking-tight'>{t(`city.${SanitizeName(data.location.name)}`)}</h2>
-						<p className='text-lg text-sky-100 lg:text-xl'>{t(`country.${SanitizeName(data.location.country)}`)}</p>
+						<h2 className='font-bold text-4xl tracking-tight'>{t(`city.${sanitizeName(data.location.name)}`)}</h2>
+						<p className='text-lg text-sky-100 lg:text-xl'>{t(`country.${sanitizeName(data.location.country)}`)}</p>
 						<p className='text-sky-100'>
 							{new Date().toLocaleDateString(locale, {
 								weekday: 'long',

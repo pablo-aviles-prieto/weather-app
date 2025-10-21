@@ -6,10 +6,14 @@ import { NextDaysForecast } from '@/features/forecast/components/forecast-displa
 import type { WeatherResponse } from '@/types/weather';
 
 type WeatherDisplayProps = {
-	data: WeatherResponse;
+	data: WeatherResponse | undefined;
 };
 
 export function WeatherDisplay({ data }: WeatherDisplayProps) {
+	if (!data) {
+		return null;
+	}
+
 	const today = data.forecast.forecastday[0];
 
 	return (

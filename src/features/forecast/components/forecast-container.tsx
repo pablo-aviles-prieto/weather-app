@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/style/useBlockStatements: <improves readability> */
 import { useQuery } from '@tanstack/react-query';
 import { Loader } from '@/components/loader';
 import { useCity } from '@/contexts/city-context';
@@ -12,17 +13,9 @@ export const ForecastContainer = () => {
 	const currentLanguage = useLanguage();
 	const { data, isLoading, error } = useQuery(weatherRepository.getWeatherDetails(selectedCity, currentLanguage));
 
-	if (isLoading) {
-		return <Loader />;
-	}
-
-	if (error) {
-		return <ForecastError error={error} />;
-	}
-
-	if (!selectedCity || !data) {
-		return <ForecastEmpty />;
-	}
+	if (!selectedCity) return <ForecastEmpty />;
+	if (isLoading) return <Loader />;
+	if (error) return <ForecastError error={error} />;
 
 	return <WeatherDisplay data={data} />;
 };
