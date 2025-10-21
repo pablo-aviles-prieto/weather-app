@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { type RenderOptions, render } from '@testing-library/react';
+import { type RenderOptions, render, renderHook as rtlRenderHook } from '@testing-library/react';
 import type { ReactElement } from 'react';
 import { CityProvider } from '@/contexts/city-context';
 import '../i18n';
@@ -30,9 +30,13 @@ function AllTheProviders({ children }: AllTheProvidersProps) {
 const customRender = (ui: ReactElement, options?: Omit<RenderOptions, 'wrapper'>) =>
 	render(ui, { wrapper: AllTheProviders, ...options });
 
+// Custom renderHook with the providers
+const customRenderHook = <Result, Props>(hook: (props: Props) => Result, options?: Omit<RenderOptions, 'wrapper'>) =>
+	rtlRenderHook(hook, { wrapper: AllTheProviders, ...options });
+
 // Re-export everything from @testing-library/react
 // biome-ignore lint/performance/noBarrelFile: <need to export everything from RTL>
 export * from '@testing-library/react';
 
 // Override render method
-export { customRender as render };
+export { customRender as render, customRenderHook as renderHook };
